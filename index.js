@@ -8,6 +8,7 @@ const firmRoutes = require('./routes/firmRoute')
 const productRoutes = require('./routes/productRoute')
 const cors=require('cors');
 const path=require('path');
+const { send } = require('process');
 
 
 const app = express();
@@ -29,4 +30,8 @@ app.use('/uploads',express.static('uploads'))
 app.listen(process.env.PORT, () => {
     console.log('server started and running successfully')
 });
+
+app.use('/',(req,res)=>{
+    res.send("<h1>welcome to Khana Backend")
+})
 
